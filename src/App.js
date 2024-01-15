@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import { Component, default as React } from 'react'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import './App.css'
+import { LoginSignUp } from './Components/LogonSignUp/LoginSignUp'
+import SecretPosting from './Components/PostingPage/PostingPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className='App'>
+          <Routes>
+            <Route exact path='/' element={<LoginSignUp />}></Route>
+            <Route
+              exact
+              path='/post-message'
+              element={<SecretPosting />}
+            ></Route>
+          </Routes>
+        </div>
+      </Router>
+    )
+  }
 }
 
-export default App;
+export default App
