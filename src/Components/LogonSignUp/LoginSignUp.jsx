@@ -54,7 +54,7 @@ export const LoginSignUp = () => {
       )}
       <div className='submit-container'>
         <Link
-          to='/'
+          to='/post-message'
           className={action === 'LogIn' ? 'submit gray' : 'submit'}
           onClick={() => {
             setAction('Log in')
@@ -63,7 +63,7 @@ export const LoginSignUp = () => {
           Log in
         </Link>
         <Link
-          to='/'
+          to='/post-message'
           className={action === 'SignUp' ? 'submit gray' : 'submit'}
           onClick={() => {
             setAction('SignUp')
