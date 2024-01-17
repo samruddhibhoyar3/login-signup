@@ -11,12 +11,9 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Routes>
-            <Route exact path='/' element={<LoginSignUp />}></Route>
-            <Route
-              exact
-              path='/post-message'
-              element={<SecretPosting />}
-            ></Route>
+            <Route exact path='/' element={<SecretPosting />}></Route>
+
+            <Route exact path='/login' element={<LoginSignUp />}></Route>
           </Routes>
         </div>
       </Router>

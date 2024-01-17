@@ -1,8 +1,10 @@
 // LoginSignUp.js
+import { useAuth0 } from '@auth0/auth0-react'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Button, Row } from 'react-bootstrap'
 import './LoginSignUp.css'
 
+import { Link } from 'react-router-dom'
 import email_icon from '../Assets/email.png'
 import password_icon from '../Assets/password.png'
 import user_icon from '../Assets/person.png'
@@ -11,6 +13,7 @@ export const LoginSignUp = () => {
   const [action, setAction] = useState('SignUp')
   const [username, setUsername] = useState('')
   const [isLoggedIn, setLoggedIn] = useState(false)
+  const { loginWithRedirect } = useAuth0()
 
   return (
     <div className='Container'>
@@ -50,25 +53,32 @@ export const LoginSignUp = () => {
         </div>
       )}
       <div className='submit-container'>
-        <div
+        <Link
+          to='/'
           className={action === 'LogIn' ? 'submit gray' : 'submit'}
           onClick={() => {
             setAction('Log in')
           }}
         >
           Log in
-        </div>
-        <div
+        </Link>
+        <Link
+          to='/'
           className={action === 'SignUp' ? 'submit gray' : 'submit'}
           onClick={() => {
             setAction('SignUp')
           }}
         >
           SignUp
-        </div>
-        <div className='submit gray'>
-          <Link to='/post-message'>Posts</Link>
-        </div>
+        </Link>
+        <div className='caret-lime-50'>OR</div>
+        <Row>
+          <div className=' d-flex justify-content-between'>
+            <Button onClick={() => loginWithRedirect()}>
+              Log In with Google
+            </Button>
+          </div>
+        </Row>
       </div>
     </div>
   )

@@ -37,9 +37,7 @@ const SecretPosting = () => {
         />
       </InputGroup>
       <div>
-        <Button variant='primary' onClick={handleSecretSubmit}>
-          Post Secret
-        </Button>
+        <Button onClick={handleSecretSubmit}>Post Secret</Button>
       </div>
 
       <div className='secretlist'>
