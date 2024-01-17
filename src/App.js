@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Routes>
-            <Route exact path='/' element={<SecretPosting />}></Route>
+            <Route exact path='/' element={<Dashboard />}></Route>
             <Route exact path='/dashboard' element={<Dashboard />}></Route>
             <Route exact path='/login' element={<LoginSignUp />}></Route>
             <Route
