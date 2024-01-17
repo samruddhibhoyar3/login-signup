@@ -29,6 +29,7 @@ export const LoginSignUp = () => {
             <img src={user_icon} alt='' />
             <input
               type='text'
+              required
               placeholder='Name'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -38,11 +39,11 @@ export const LoginSignUp = () => {
 
         <div className='input'>
           <img src={email_icon} alt='' />
-          <input type='email' placeholder='Email' />
+          <input type='email' placeholder='Email' required />
         </div>
         <div className='input'>
           <img src={password_icon} alt='' />
-          <input type='password' placeholder='Password' />
+          <input type='password' placeholder='Password' required />
         </div>
       </div>
       {action === 'SignUp' ? (

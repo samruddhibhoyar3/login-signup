@@ -1,10 +1,15 @@
 import { Auth0Provider } from '@auth0/auth0-react'
+import { Client } from 'appwrite'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import './index.css'
+const client = new Client()
 
+client
+  .setEndpoint('https://cloud.appwrite.io/v1')
+  .setProject('65a6de644d5c523f8554')
 const root = createRoot(document.getElementById('root'))
 
 root.render(

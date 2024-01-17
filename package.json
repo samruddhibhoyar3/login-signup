@@ -29,6 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://localhost:3000/dashboard",
   "eslintConfig": {
     "extends": [
       "react-app",
